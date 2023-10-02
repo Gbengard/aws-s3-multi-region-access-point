@@ -44,7 +44,7 @@ For the purpose of this project, two buckets will be utilized: one in the ap-sou
 
 Please note that the creation process may take up to 24 hours; however, it usually completes within 15 minutes based on our testing.
 	
-	![Untitled](images/Untitled3.png)
+![Untitled](images/Untitled3.png)
 
 ### Stage 4 - Configuration of bucket replication
 
@@ -58,7 +58,7 @@ Please note that the creation process may take up to 24 hours; however, it usual
 
 At this stage, both buckets are set up to replicate changes to each other, ensuring data consistency and redundancy across regions.
 	
-	![Untitled](images/Untitled4.png)
+![Untitled](images/Untitled4.png)
 
 ## Stage 4 - Testing using the Multi-Region Access Point (MRAP)
 
@@ -114,7 +114,7 @@ To mitigate this issue, Replication Time Control (RTC) can be enabled, which acc
 
 This time, the file was initially created in Canada, as expected. However, the replication process took a bit longer (remember, S3 does not guarantee immediate replication).
 
-		![Untitled](images/Untitled10.png)
+![Untitled](images/Untitled10.png)
 
 It took approximately 1 minutes for "test2.file" to appear in the Sydney bucket.
 
@@ -122,7 +122,7 @@ It took approximately 1 minutes for "test2.file" to appear in the Sydney bucket.
 
 Please note that while Mumbai may be geographically close to the center, there are various network factors behind the scenes that determine which region is actually the closest.
 
-	![Untitled](images/Untitled11.png)
+![Untitled](images/Untitled11.png)
 
 8.	Execute the following command to create a new file named "test3.file" and upload it:
 
@@ -134,7 +134,7 @@ Please note that while Mumbai may be geographically close to the center, there a
 
 In this case, Sydney wins the race! 🙌
 
-	![Untitled](images/Untitled12.png)
+![Untitled](images/Untitled12.png)
 
 9.	For the final test, we will examine the scenario where we attempt to retrieve an object via our Multi-Region Access Point from one bucket, but our 'get' request is routed to another bucket where the file has not yet been replicated.
 
